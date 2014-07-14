@@ -9,7 +9,7 @@ Install Instructions:
 
 2- In order to get mapsforge renderer classes to work, we need to initilize AndroidGraphicFactory class,
 so add thess lines to your phonegap onCreate method at your Activity class:
-    AndroidGraphicFactory.createInstance(this.getApplication());
+   AndroidGraphicFactory.createInstance(this.getApplication());
   
 3- Call to StaticTileCache.initialize method in order to initilize neccessery objects: 
     StaticTileCache.initialize(Environment.getExternalStorageDirectory() + "/iran.map", this);
@@ -73,4 +73,4 @@ where "/iran.map" referes to your mapsforge offline map. (in which you can downl
         attribution: 'Dolphin Map Viewer',
         maxZoom: 18
     }).addTo(map);
-    '
+    
