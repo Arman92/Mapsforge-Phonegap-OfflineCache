@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.Dolphin.OfflineMap.MapsforgeTileCache"
+    version="0.2.0">
+    <name>MapsforgeTileCaching</name>
+    <description>Mapsforge offline tile caching</description>
+    <license>MIT</license>
+    <keywords>phonegap,mapsforge, offline tile</keywords>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+ 
+
+    <js-module src="www/MapsforgeTileCache.js" name="MapsforgeTileCache">
+        <clobbers target="plugins.mapsforgeTileCache" />
+    </js-module>
+	
+	<asset src="www/leafletcss" target="css" />
+	<asset src="www/leaflet/js/leaflet.js" target="js/leaflet.js" /> -->
+	
+	
+    <!-- android -->
+    <platform name="android">
+        <source-file src="src/android/MapsforgeTileCache.java" target-dir="src/com/Dolphin/OfflineMap" />
+        <source-file src="src/android/StaticTileCache.java" target-dir="src/com/Dolphin/OfflineMap" />
+		
+		<!-- include libraries -->
+		<source-file src="src/android/libs/mapsforge-core-0.4.0.jar" target-dir="src/libs" />
+		<source-file src="src/android/libs/mapsforge-core-0.4.0.jar.properties" target-dir="src/libs" />
+		<source-file src="src/android/libs/doc/mapsforge-core-0.4.0-javadoc.jar" target-dir="src/libs/docs" />
+		<source-file src="src/android/libs/doc/mapsforge-core-0.4.0-sources.jar" target-dir="src/libs/src" />
+
+		<source-file src="src/android/libs/mapsforge-map-0.4.0.jar" target-dir="src/libs" />
+		<source-file src="src/android/libs/mapsforge-map-0.4.0.jar.properties" target-dir="src/libs" />
+		<source-file src="src/android/libs/doc/mapsforge-map-0.4.0-javadoc.jar" target-dir="src/libs/docs" />
+		<source-file src="src/android/libs/doc/mapsforge-map-0.4.0-sources.jar" target-dir="src/libs/src" />
+
+		<source-file src="src/android/libs/mapsforge-core-0.4.0.jar" target-dir="src/libs" />
+		<source-file src="src/android/libs/mapsforge-core-0.4.0.jar.properties" target-dir="src/libs" />
+		<source-file src="src/android/libs/doc/mapsforge-core-0.4.0-javadoc.jar" target-dir="src/libs/docs" />
+		<source-file src="src/android/libs/doc/mapsforge-core-0.4.0-sources.jar" target-dir="src/libs/src" />
+
+		<source-file src="src/android/libs/mapsforge-map-android-0.4.0.jar" target-dir="src/libs" />
+		<source-file src="src/android/libs/mapsforge-map-android-0.4.0.jar.properties" target-dir="src/libs" />
+		<source-file src="src/android/libs/doc/mapsforge-map-android-0.4.0-javadoc.jar" target-dir="src/libs/docs" />
+		<source-file src="src/android/libs/doc/mapsforge-map-android-0.4.0-sources.jar" target-dir="src/libs/src" />
+
+		<source-file src="src/android/libs/mapsforge-map-awt-0.4.0.jar" target-dir="src/libs" />
+		<source-file src="src/android/libs/mapsforge-map-awt-0.4.0.jar.properties" target-dir="src/libs" />
+		<source-file src="src/android/libs/doc/mapsforge-map-awt-0.4.0-javadoc.jar" target-dir="src/libs/docs" />
+		<source-file src="src/android/libs/doc/mapsforge-map-awt-0.4.0-sources.jar" target-dir="src/libs/src" />	
+
+		<source-file src="src/android/libs/mapsforge-map-reader-0.4.0.jar" target-dir="src/libs" />
+		<source-file src="src/android/libs/mapsforge-map-reader-0.4.0.jar.properties" target-dir="src/libs" />
+		<source-file src="src/android/libs/doc/mapsforge-map-reader-0.4.0-javadoc.jar" target-dir="src/libs/docs" />
+		<source-file src="src/android/libs/doc/mapsforge-map-reader-0.4.0-sources.jar" target-dir="src/libs/src" />		
+
+		<source-file src="src/android/libs/svg-android-1.0.jar" target-dir="src/libs" />
+		<source-file src="src/android/libs/svg-android-1.0.jar.properties" target-dir="src/libs" />
+		<source-file src="src/android/libs/doc/svg-android-1.0-javadoc.jar" target-dir="src/libs/docs" />
+		<source-file src="src/android/libs/doc/svg-android-1.0-sources.jar" target-dir="src/libs/src" />	
+
+		
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+            <uses-permission android:name="android.permission.INTERNET" />
+           
+        </config-file>   
+
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MapsforgeTileCache">
+                <param name="android-package" value="com.Dolphin.OfflineMap.MapsforgeTileCache"/>
+            </feature>
+        </config-file> 
+     </platform>          
+
+
+</plugin>
